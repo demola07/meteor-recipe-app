@@ -1,6 +1,7 @@
 import './layouts/HomeLayout.html'
 import './layouts/MainLayout.html'
-import './layouts/SideNav.html'
+import './partials/SideNav.html'
+import './partials/Header.html'
 import './recipes/Recipes.html'
 import './recipes/NewRecipe.html'
 import '../lib/routes'
