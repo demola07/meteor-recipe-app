@@ -1,0 +1,8 @@
+import './layouts/HomeLayout.html'
+import './layouts/MainLayout.html'
+import './layouts/SideNav.html'
+import './recipes/Recipes.html'
+import './recipes/NewRecipe.html'
+import '../lib/routes'
+import '../collections/Recipes'
+import './recipes/Recipes'
