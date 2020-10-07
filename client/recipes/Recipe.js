@@ -1,12 +1,17 @@
-import { Session } from 'meteor/session'
+import { Template } from 'meteor/templating'
+import { ReactiveVar } from 'meteor/reactive-var'
+
+Template.Recipe.onCreated(function () {
+	this.editMode = new ReactiveVar(false)
+})
 
 Template.Recipe.helpers({
 	updateRecipeId: function () {
 		return this._id
 	},
 
-	editModeSession: function () {
-		return Session.get('editMode')
+	editMode: function () {
+		return Template.instance().editMode.get()
 	},
 })
 
@@ -19,7 +24,7 @@ Template.Recipe.events({
 		Meteor.call('deleteRecipe', this._id)
 	},
 
-	'click .fa-pencil': function () {
-		Session.set('editMode', !Session.get('editMode'))
+	'click .fa-pencil': function (event, template) {
+		template.editMode.set(!template.editMode.get())
 	},
 })
